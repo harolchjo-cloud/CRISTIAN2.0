@@ -24,3 +24,8 @@ def ver_peritajes():
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
+
+#Simulacion de el desarrollo de una nueva ruta
+@app.route('/api/inventario', methods=['GET'])
+def inventario_wip():
+    pass
