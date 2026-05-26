@@ -12,7 +12,7 @@ def guardar_peritaje():
     if not data or "placa" not in data:
         return jsonify({"error":"Debes enviar la placa ej Json"}), 400
     nuevo = {
-        "placa": data["placa"].upper(),
+        "placa": data["placa"].upper()  # FIX: mayusculas forzadas,
         "hora": str(datetime.datetime.now())
     }
     peritajes.append(nuevo)
