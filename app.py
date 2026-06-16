@@ -21,7 +21,6 @@ def guardar_peritaje():
 
 @app.route('/api/peritajes', methods=['GET'])
 def ver_peritajes():
-    x = 1 / 0
     return jsonify({"peritajes": peritajes})
 
 if __name__ == "__main__":
