@@ -1,4 +1,5 @@
 from flask import Flask, request, jsonify
+import os
 import datetime
 
 app = Flask(__name__)
@@ -12,7 +13,7 @@ def guardar_peritaje():
     if not data or "placa" not in data:
         return jsonify({"error":"Debes enviar la placa ej Json"}), 400
     nuevo = {
-        "placa": data["placa"].upper()  # FIX: mayusculas forzadas,
+        "placa": data["placa"].upper(),
         "hora": str(datetime.datetime.now())
     }
     peritajes.append(nuevo)
@@ -20,7 +21,8 @@ def guardar_peritaje():
 
 @app.route('/api/peritajes', methods=['GET'])
 def ver_peritajes():
+    x = 1 / 0
     return jsonify({"peritajes": peritajes})
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
