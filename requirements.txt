@@ -1,2 +1,7 @@
 flask
 gunicorn
+werkzeug
+jinja2
+click
+itsdangerous
+blinker
